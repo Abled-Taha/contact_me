@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   late Future people;
   Future getPeople() async {
     var response = await Dio()
-        .get('https://contact-me-api-python.herokuapp.com/225338242/find');
+        .get('http://192.168.10.2:5000/225338242/find');
     await Future.delayed(Duration(seconds: 1));
     return response.data;
   }
@@ -87,7 +87,7 @@ class _MyAppState extends State<MyApp> {
                             ElevatedButton(
                               onPressed: () {
                                 Dio().request(
-                                    'https://contact-me-api-python.herokuapp.com/225338242/delete/$email');
+                                    'http://192.168.10.2:5000/225338242/delete/$email');
                                 setState(() {
                                   build(context);
                                 });
